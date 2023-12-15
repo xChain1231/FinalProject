@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administración de Usuarios</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Administración de Usuarios</h1>
+
+    <!-- Sección de Inicio de Sesión -->
+    <div id="loginSection">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <!-- Secciones de Gestión de Usuarios (Ocultas hasta iniciar sesión) -->
+    <div id="userManagementSections" style="display: none;">
+        <button id="logoutButton">Cerrar Sesión</button>
+
+        <!-- Botones de Navegación -->
+        <div id="navigationButtons">
+            <button onclick="showSection('registerSection')">Registrar Usuario</button>
+            <button onclick="showSection('modifySection')">Modificar Usuario</button>
+            <button onclick="showSection('deleteSection')">Eliminar Usuario</button>
+            <button onclick="showSection('listSection')">Ver Usuarios Registrados</button>
+        </div>
+
+        <!-- Sección de Registro de Usuario -->
+        <div id="registerSection" class="section" style="display: none;">
+            <h2>Registrar Nuevo Usuario</h2>
+            <form id="registerForm">
+                <input type="text" id="regID" placeholder="ID">
+                <input type="text" id="regFirstName" placeholder="Nombre">
+                <input type="text" id="regLastName" placeholder="Apellido">
+                <input type="tel" id="regPhone" placeholder="Teléfono">
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+
+        <!-- Sección de Modificación de Usuario -->
+        <div id="modifySection" class="section" style="display: none;">
+            <h2>Modificar Usuario</h2>
+            <form id="modifyForm">
+                <input type="number" id="modUserId" placeholder="ID de Usuario">
+                <input type="text" id="modFirstName" placeholder="Nuevo Nombre">
+                <input type="text" id="modLastName" placeholder="Nuevo Apellido">
+                <input type="tel" id="modPhone" placeholder="Nuevo Teléfono">
+                <button type="submit">Modificar</button>
+            </form>
+        </div>
+
+        <!-- Sección de Eliminación de Usuario -->
+        <div id="deleteSection" class="section" style="display: none;">
+            <h2>Eliminar Usuario</h2>
+            <form id="deleteForm">
+                <input type="number" id="delUserId" placeholder="ID de Usuario">
+                <button type="submit">Eliminar</button>
+            </form>
+        </div>
+
+        <!-- Sección de Listado de Usuarios -->
+        <div id="listSection" class="section" style="display: none;">
+            <h2>Usuarios Registrados</h2>
+            <div id="usersList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

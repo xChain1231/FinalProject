@@ -1,0 +1,117 @@
+:root {
+  --font-family-primary: helvetica;
+  --font-family-secondary: verdana;
+  --primary-color: #007bff;
+}
+
+body, form, input, label, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-primary);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+      to bottom right,
+      rgb(187, 255, 215),
+      rgb(82, 200, 255)
+  );
+}
+
+h1, h2 {
+  color: #f8f8f8;
+  -webkit-text-stroke: 0.5px #00aaff;
+  text-shadow: 2px 2px 4px rgba(0, 170, 255, 0.6);
+  font-family: var(--font-family-primary);
+}
+
+.form-ancle {
+  background-color: rgba(7, 246, 166, 0.621);
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type="text"], input[type="password"], input[type="tel"], input[type="number"], input[type="file"] {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 0.1px solid #696767;
+  background-color: #f8f8f8c3;
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+}
+
+::placeholder {
+  opacity: 0.3;
+  font-family: var(--font-family-secondary);
+  animation: placeholderAnim 2s infinite;
+  text-align: center;
+}
+
+@keyframes placeholderAnim {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.boton {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: var(--primary-color);
+  overflow: hidden;
+  border: 2px solid var(--primary-color);
+}
+
+.boton:hover {
+  color: #000000;
+}
+
+.boton:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: var(--primary-color);
+}
+
+#searchResult, #usersList {
+  margin: 5px;
+  color: #333;
+  background-color: #f8f8f883;
+  padding: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  font-family: var(--font-family-primary);
+  border: 1px solid #cccccc2f;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  display: none;
+}
